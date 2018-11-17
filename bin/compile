@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+# fail fast
+set -e
+
+BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
+tar xzm -C $BUILD_DIR
